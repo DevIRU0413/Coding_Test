@@ -5,11 +5,11 @@ public class Solution {
         {
             int answer = 0;
 
-            for (int i = 1; i <= Math.Sqrt(n); i++)
+            for (int i = 1; i*i <= n; i++)
             {
                 if (n % i == 0)
                 {
-                    if (i == Math.Sqrt(n))
+                    if (i*i == n)
                     {
                         answer++;
                     }
