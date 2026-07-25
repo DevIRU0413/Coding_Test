@@ -6,8 +6,9 @@ public class Solution {
         
         foreach(int i in array)
         {
-            if(i == n)
-                answer++;
+            if(i != n)
+                continue;
+            answer++;
         }
         return answer;
     }
