@@ -1,15 +1,22 @@
 using System;
 
-public class Solution {
-    public int solution(int[] array, int n) {
-        int answer = 0;
-        
-        foreach(int i in array)
+public class Solution
+{
+    public int solution(int[] array, int n)
+    {
+        int count = 0;
+
+        foreach (int value in array)
         {
-            if(i != n)
+            if (value != n)
                 continue;
-            answer++;
+
+            if (value > n)
+                break;
+
+            count++;
         }
-        return answer;
+
+        return count;
     }
 }
