@@ -5,9 +5,9 @@ public class Solution {
         int answer = 0;
         
         Array.Sort(numbers);
-        int length = numbers.Length;
+        int lastIdx = numbers.Length - 1;
         int first = numbers[0] * numbers[1];
-        int last =  numbers[length - 2] * numbers[length - 1];
+        int last =  numbers[lastIdx - 1] * numbers[lastIdx];
         
         answer = (first > last) ? first : last;
         return answer;
