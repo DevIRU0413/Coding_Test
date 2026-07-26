@@ -1,11 +1,9 @@
 using System;
+using System.Linq;
 
 public class Solution {
     public string solution(string cipher, int code) {
-        string answer = "";
-        for(int i=0;i<cipher.Length+1;i++)
-            if(i % code == 0 && i !=0)
-                answer += cipher[i-1];
+        string answer = String.Concat(cipher.Where((x, i) => (i + 1) % code == 0));
         return answer;
     }
 }
