@@ -1,13 +1,21 @@
 using System;
+using System.Text;
 
 public class Solution {
     public string solution(string my_string) {
-        char[] chars = my_string.ToCharArray();
-        for(int i = 0; i < chars.Length; i++){
-            if(chars[i] >= 'A' && chars[i] <= 'Z')
-                chars[i] = (char)(chars[i] + 32);
+        int[] count = new int[26];
+        foreach (char c in my_string)
+        {
+            char lower = c <= 'Z' ? (char)(c + 32) : c;
+            count[lower - 'a']++;
         }
-        Array.Sort(chars);
-        return new string(chars);
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 26; i++)
+        {
+            while (count[i]-- > 0)
+                sb.Append((char)('a' + i));
+        }
+        return sb.ToString();
     }
 }
