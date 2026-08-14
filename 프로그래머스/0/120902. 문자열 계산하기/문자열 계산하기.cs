@@ -2,17 +2,14 @@ using System;
 
 public class Solution {
     public int solution(string my_string) {
-        int answer = 0;
-        int sign = 1;
-        string[] strArray = my_string.Split(' ');
-        for(int i = 0; i < strArray.Length; i++){
-            string str = strArray[i];
-            if(!int.TryParse(str, out int num))
-            {
-                sign = (str == "-") ? -1 : 1;
-                continue;
-            }
-            answer += num * sign;
+        string[] arr = my_string.Split(' ');
+        int answer = int.Parse(arr[0]);
+        for(int i = 1; i < arr.Length; i += 2){
+            int num = int.Parse(arr[i + 1]);
+            if(arr[i] == "+")
+                answer += num;
+            else
+                answer -= num;
         }
         return answer;
     }
